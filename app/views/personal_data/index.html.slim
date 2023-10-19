@@ -1,0 +1,12 @@
+
+h1 
+ div.flex.justify-center.items-center 
+    Welcome Welcome to employee details
+
+.w-full
+  .flex.flex-col.justify-center.items-center 
+    .mt-0.mb-auto
+      = button_to 'Personal Data', new_personal_datum_path, method: :get, data: { turbo_frame: 'modal' }, class: "rounded-lg py-3 px-5 shadow-xl bg-blue-600 text-white block font-medium shadow-xl"
+
+- if @personal_data.count > 0
+  = render 'personal_data', personal_info: @personal_data
